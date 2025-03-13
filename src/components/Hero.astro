@@ -1,0 +1,44 @@
+---
+// Hero.astro
+import { Button } from "@/components/ui/button";
+import { Mail, Github, Linkedin } from "lucide-react";
+import Image from 'astro:assets';
+---
+<section class="flex flex-col gap-4 py-8 md:flex-row md:items-center md:gap-8 md:py-12">
+  <div class="flex-1 space-y-4">
+    <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Alex Johnson</h1>
+    <p class="text-xl text-muted-foreground">Computer Science Student at University of Technology</p>
+    <p class="max-w-[600px] text-muted-foreground">
+      Passionate about web development, machine learning, and creating innovative solutions to real-world problems.
+    </p>
+    <div class="flex gap-4">
+      <Button asChild>
+        <a href="#contact">
+          <Mail className="mr-2 h-4 w-4" />
+          Contact Me
+        </a>
+      </Button>
+      <Button variant="outline" asChild>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <Github className="mr-2 h-4 w-4" />
+          GitHub
+        </a>
+      </Button>
+      <Button variant="outline" asChild>
+        <a href="#" target="_blank" rel="noopener noreferrer">
+          <Linkedin className="mr-2 h-4 w-4" />
+          LinkedIn
+        </a>
+      </Button>
+    </div>
+  </div>
+  <div class="flex justify-center md:justify-end">
+    <div class="relative h-60 w-60 overflow-hidden rounded-full border-4 border-primary md:h-80 md:w-80">
+      <img
+        src=""
+        alt="Alex Johnson"
+        class="object-cover"
+      />
+    </div>
+  </div>
+</section>

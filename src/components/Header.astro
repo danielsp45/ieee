@@ -1,0 +1,27 @@
+---
+// Header.astro
+import { Button } from "@/components/ui/button"
+
+---
+<header class="sticky top-0 z-10 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex h-14 items-center">
+    <div class="mr-4 font-bold">Alex Johnson</div>
+    <nav class="flex flex-1 items-center justify-end space-x-4">
+      <Button variant="ghost" className="text-sm" asChild>
+        <a href="#about">About</a>
+      </Button>
+      <Button variant="ghost" className="text-sm" asChild>
+        <a href="#skills">Skills</a>
+      </Button>
+      <Button variant="ghost" className="text-sm" asChild>
+        <a href="#experience">Experience</a>
+      </Button>
+      <Button variant="ghost" className="text-sm" asChild>
+        <a href="#projects">Projects</a>
+      </Button>
+      <Button variant="ghost" className="text-sm" asChild>
+        <a href="#contact">Contact</a>
+      </Button>
+    </nav>
+  </div>
+</header>
