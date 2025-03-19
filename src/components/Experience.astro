@@ -2,68 +2,68 @@
 // Experience.astro
 import { Card, CardContent } from "@/components/ui/card";
 import { Briefcase, GraduationCap } from "lucide-react";
+
+let entries = [
+  {
+    title: "Software Engineering Intern",
+    company: "TechCorp Inc.",
+    date: "Jun 2023 - Aug 2023",
+    description: [
+      "Developed and maintained features for a React-based web application",
+      "Collaborated with senior developers to implement RESTful APIs using Node.js",
+      "Participated in code reviews and agile development processes",
+    ],
+  },
+  {
+    title: "BSc in Computer Science",
+    company: "University of Minho",
+    date: "Sep 2020 - Present",
+    description: [
+      "GPA: 3.8/4.0",
+      "Relevant coursework: Data Structures, Algorithms, Database Systems, Web Development, Machine Learning",
+      "President of the University Coding Club (2022-2023)",
+    ],
+  },
+  {
+    title: "Research Assistant",
+    company: "University AI Lab",
+    date: "Jan 2022 - May 2022",
+    description: [
+      "Assisted in research on natural language processing applications",
+      "Implemented machine learning models using Python and TensorFlow",
+      "Co-authored a research paper presented at a student conference",
+    ],
+  }
+]
 ---
 <section id="experience" class="py-8 md:py-12">
   <h2 class="mb-6 text-2xl font-bold tracking-tight md:text-3xl">Experience & Education</h2>
   <div class="space-y-6">
-    <Card>
-      <CardContent className="p-6">
-        <div class="flex items-start justify-between">
-          <div>
-            <div class="flex items-center gap-2">
-              <Briefcase className="h-5 w-5 text-primary" />
-              <h3 class="text-xl font-semibold">Software Engineering Intern</h3>
+    {
+      entries.map((entry) => (
+        <Card>
+          <CardContent className="p-6">
+            <div class="flex items-start justify-between">
+              <div>
+                <div class="flex items-center gap-2">
+                  <Briefcase className="h-5 w-5 text-primary" />
+                  <h3 class="text-xl font-semibold">{entry.title}</h3>
+                </div>
+                <p class="text-muted-foreground">{entry.company}</p>
+              </div>
+              <p class="text-sm text-muted-foreground">{entry.date}</p>
             </div>
-            <p class="text-muted-foreground">TechCorp Inc.</p>
-          </div>
-          <p class="text-sm text-muted-foreground">Jun 2023 - Aug 2023</p>
-        </div>
-        <ul class="mt-4 space-y-2 pl-5 list-disc">
-          <li>Developed and maintained features for a React-based web application</li>
-          <li>Collaborated with senior developers to implement RESTful APIs using Node.js</li>
-          <li>Participated in code reviews and agile development processes</li>
-        </ul>
-      </CardContent>
-    </Card>
-    <Card>
-      <CardContent className="p-6">
-        <div class="flex items-start justify-between">
-          <div>
-            <div class="flex items-center gap-2">
-              <GraduationCap className="h-5 w-5 text-primary" />
-              <h3 class="text-xl font-semibold">BSc in Computer Science</h3>
-            </div>
-            <p class="text-muted-foreground">University of Technology</p>
-          </div>
-          <p class="text-sm text-muted-foreground">Sep 2020 - Present</p>
-        </div>
-        <ul class="mt-4 space-y-2 pl-5 list-disc">
-          <li>GPA: 3.8/4.0</li>
-          <li>
-            Relevant coursework: Data Structures, Algorithms, Database Systems, Web Development, Machine Learning
-          </li>
-          <li>President of the University Coding Club (2022-2023)</li>
-        </ul>
-      </CardContent>
-    </Card>
-    <Card>
-      <CardContent className="p-6">
-        <div class="flex items-start justify-between">
-          <div>
-            <div class="flex items-center gap-2">
-              <Briefcase className="h-5 w-5 text-primary" />
-              <h3 class="text-xl font-semibold">Research Assistant</h3>
-            </div>
-            <p class="text-muted-foreground">University AI Lab</p>
-          </div>
-          <p class="text-sm text-muted-foreground">Jan 2022 - May 2022</p>
-        </div>
-        <ul class="mt-4 space-y-2 pl-5 list-disc">
-          <li>Assisted in research on natural language processing applications</li>
-          <li>Implemented machine learning models using Python and TensorFlow</li>
-          <li>Co-authored a research paper presented at a student conference</li>
-        </ul>
-      </CardContent>
-    </Card>
+            <ul class="mt-4 space-y-2 pl-5 list-disc">
+              {
+                entry.description.map((desc) => (
+                  <li>{desc}</li>
+                ))
+              }
+            </ul>
+          </CardContent>
+        </Card>
+        )
+      )
+    }
   </div>
 </section>
